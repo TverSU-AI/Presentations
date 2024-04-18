@@ -1,0 +1,36 @@
+\section{Принятие решения}
+\begin{frame}
+    \frametitle{Принятие решения}
+    Пусть
+
+    $\left[P_i\right]_{i=0}^{M-1}$ -- результат работы модуля распознавания СИЗов,
+
+    $\left[D_i\right]_{i=0}^{M-1}$ -- результат работы модуля детектирования нахождения в опасной зоне:
+    $$ P_i = 1 \iff  \text{i-й человек находится в кадре без СИЗ}$$
+    $$ D_i = 1 \iff \text{i-й человек находится в кадре в опасной зоне} $$
+
+    В данном случае $M$ -- число обнаруженных людей в кадре.
+
+    Тогда будем считать ситуацию на текущем кадре опасной, если истинно следующее значение:
+    $$ F = \bigvee\limits_{i=0}^{M-1} \left(P_i \wedge D_i\right) $$
+\end{frame}
+
+\begin{frame}
+    \frametitle{Матрица возможных ответов}
+    Для расширения спектра возможных ответов требуется введение индикатора присутствия человека без СИЗ в кадре:
+    $$ P = \bigvee\limits_{i=0}^{M-1} P_i $$
+
+    \begin{table}
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \diagbox{$D_i$}{$P_i$} & $0$ & $1$\\
+            \hline
+            $0$ & \cellcolor{green}-- & \cellcolor{yellow}$P \wedge \neg F$ \\
+            \hline
+            $1$ & \cellcolor{green}-- & \cellcolor{red}$F$ \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+\end{frame}

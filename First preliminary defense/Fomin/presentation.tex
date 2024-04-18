@@ -1,0 +1,78 @@
+\documentclass[intlimits, 12pt, unicode]{beamer}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{diagbox}
+\usepackage{beamerthemesplit}
+\usepackage{xcolor,colortbl}
+
+\usetheme{Warsaw}
+
+\makeatletter
+\setbeamertemplate{headline}{%
+    \leavevmode%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.5ex]{section in head/foot}%
+        \hfill\strut\insertsectionhead\hspace{.5em}\mbox{}%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.5ex]{subsection in head/foot}%
+        \mbox{}\hspace{.5em}\strut\insertsubsectionhead\hfill%
+    \end{beamercolorbox}%
+}
+\makeatother
+
+\usefonttheme[onlymath]{serif}
+
+\setbeamerfont{institute}{size=\normalsize}
+
+\setbeamercolor{bluetext_color}{fg=blue}
+\newcommand{\bluetext}[1]{{\usebeamercolor[fg]{bluetext_color}#1}}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+
+\graphicspath{{figures/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+
+\setbeamercovered{transparent}
+
+\title[Система компьютерного зрения \dots \nobreak\hfill \insertframenumber\,/\,\inserttotalframenumber]{Система компьютерного зрения для детектирования опасных ситуаций на производстве}
+\author{Фомин~Никита~Алексеевич,~М26 группа}
+\institute{Научный руководитель: к.ф.-м.н.~Солдатенко~Илья~Сергеевич \\
+    Тверской~государственный~университет \\
+	Факультет~прикладной~математики~и~кибернетики \\
+	Кафедра~информатики~и~информационных~технологий \\
+}
+\date{
+	Тверь ---
+	2024
+}
+
+\begin{document}
+	\maketitle
+
+	\begin{frame}
+		\frametitle{Содержание}
+
+		\tableofcontents
+	\end{frame}
+
+	\input{1_problem_formulation}
+
+	\input{2_skeletization}
+
+	\input{3_danger_zone_detection}
+
+    \input{4_decision_making}
+
+    \input{5_results}
+
+    \input{6_directions_of_development}
+
+\end{document}
